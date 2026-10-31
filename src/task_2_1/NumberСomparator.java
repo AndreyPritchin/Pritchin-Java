@@ -2,7 +2,7 @@ package task_2_1;
 
 import java.util.Scanner;
 
-public class Сomparator {
+public class NumberСomparator {
     public static void main(String[] args) {
         //Чтение чисел a, b из консоли
         Scanner scanner = new Scanner(System.in);
