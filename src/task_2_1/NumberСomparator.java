@@ -6,10 +6,34 @@ public class NumberСomparator {
     public static void main(String[] args) {
         //Чтение чисел a, b из консоли
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите целое число a:");
-        int numberA = scanner.nextInt();
-        System.out.println("Введите целое число b:");
-        int numberB = scanner.nextInt();
+
+        int numberA = 0;
+        int numberB = 0;
+        boolean aValidInt = false;
+        boolean bValidInt = false;
+
+        //Циклические проверки типа введенных данных
+        while (!aValidInt) {
+            System.out.println("Введите целое число a:");
+            if (scanner.hasNextInt()) {
+                numberA = scanner.nextInt();
+                aValidInt = true;
+            } else {
+                System.out.println("Можно вводить только целые числа");
+                scanner.next();
+            }
+        }
+
+        while (!bValidInt) {
+            System.out.println("Введите целое число b:");
+            if (scanner.hasNextInt()) {
+                numberB = scanner.nextInt();
+                bValidInt = true;
+            } else {
+                System.out.println("Можно вводить только целые числа");
+                scanner.next();
+            }
+        }
 
         //Сравнение чисел a и b
         if (numberA == numberB) {
@@ -25,6 +49,7 @@ public class NumberСomparator {
         System.out.println("Операция вычитания a - b = " + (numberA - numberB));
         System.out.println("Операция умножения a * b = " + (numberA * numberB));
 
+        //Проверка делителя
         if (numberB == 0) {
             System.out.println("Делитель b = 0. Деление невозможно");
         }
